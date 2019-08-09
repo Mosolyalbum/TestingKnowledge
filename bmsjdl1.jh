@@ -1,0 +1,42 @@
+entity Client {
+	clientName String,
+    clientPhone String,
+    clientEmail String,
+    clientCity String,
+    clientPostalCode Integer,
+    clientAddress String,
+    clientCompany String,
+    clientNotes String
+}
+
+entity Vehicle {
+	vehicleName String,
+    vehicleId String,
+    vehicleVin String,
+    vehicleNotes String
+}
+
+entity WorkSheet {
+	wsDate Date,
+    vehicleOdo Integer,
+    wsNotes String
+}
+
+entity VehicleParts{
+	partName String,
+    partNumber String,
+    partIncomePrice Integer,
+    partClientPrice Integer
+}
+
+relationship OneToMany {
+	Client to Vehicle
+}
+
+relationship OneToOne {
+	WorkSheet to Vehicle
+}
+
+relationship OneToOne {
+	Vehicle to VehicleParts
+}
